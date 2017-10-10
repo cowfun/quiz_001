@@ -1,0 +1,22 @@
+<%- include('./partials/header') %>
+
+    <div class = "container justify-content-center">
+    <% for (let cluck of clucks) { %>
+      <div class ="row mt-2">
+        <div class="col-sm-12">
+          <div class="card p-3">
+            <div class="media">
+              <img class="d-flex align-self-start mr-3" src="/images/chicken.jpg" width = "100px" height = "100px" alt="Generic placeholder image">
+              <div class="media-body">
+                <h5 class="mt-0"><%= cluck.username %> • <%= moment(cluck.created_at).fromNow() %></h5>
+                <p><%= cluck.content %></p>
+                <img class="card-img" src="<%= cluck.photo_path %>" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+<%- include('./partials/footer') %>
